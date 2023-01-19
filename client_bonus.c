@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 10:08:52 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/01/19 08:51:21 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/01/19 08:51:35 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 int	check_pid(char *pid)
 {
@@ -55,8 +55,6 @@ int	send_input(int pid, char c)
 				return (ft_printf("Error in SIGUSR2 send_func"), 1);
 			c >>= 1;
 		}
-		usleep(50);
-		i++;
 	}
 	i = 0;
 	return (0);
@@ -84,7 +82,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		ft_printf("Only 2 arguments are allowed. The process-ID & the message\
+		ft_printf("Only 2 arguments are allowed: The process-ID & the message\
 you want to send.\n");
 		return (1);
 	}
